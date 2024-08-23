@@ -1,0 +1,120 @@
+{% include "header.html" %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+
+        <form action="{{ url_for ('showdata.Showsearch')}}" method="POST">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">ค้นหา</span>
+    <input type="text" class="w-50 form-control" placeholder="ใส่ชื่อวิทยาลัย หรือ TK หรือ จังหวัด" name="ssearch" >
+       &nbsp; &nbsp;
+
+     <select class="form-select col-md-auto ms-auto" name="works">
+    <option value="" selected>งวดงานทั้งหมด</option>
+    <option value="งวด1">งวดงานที่ 1</option>
+    <option value="งวด2">งวดงานที่ 2</option>
+    <option value="งวด3">งวดงานที่ 3</option>
+    <option value="งวด4">งวดงานที่ 4</option>
+  </select>
+       &nbsp; &nbsp;
+      <button type="submit" class="btn btn-primary">ค้นหา</button>
+
+        </form>
+  &nbsp;
+
+</div>
+    </div>
+    <div class="col-auto">
+
+      <form action="{{ url_for ('showdata.Showsearch')}}" method="POST">
+  <div class="form-row align-items-center border border-info">
+      <div class="col-auto">
+    <input type="date" class="form-control" name="dtstart" autocomplete="off" required>
+          </div>
+      <div class="col-auto">
+      <input type="date" class="form-control" name="dtend" autocomplete="off" required>
+</div>
+<div class="col-auto">
+  <button type="submit" class="btn btn-primary">แสดงข้อมูล</button>
+
+    <a href="/" type="button" class="btn btn-outline-primary">แสดงทั้งหมด</a>
+    </div>
+    </div>
+</form>
+
+    </div>
+    <div class="col-auto">
+      <a class="btn btn-outline-primary" href="/loginpage" role="button">เข้าสู่ระบบ admin</a>
+    </div>
+
+<br><br>
+
+      <div class="container-fluid">
+  <div class="row">
+    <div class="col-auto">
+    <div class="col"><h4 class="font-weight-normal mb-3">จำนวน TICKET ที่มี :<kbd>{{ total2 }}</kbd> &nbsp; &nbsp;&nbsp; &nbsp;
+    </h4>
+    </div>
+
+    </div>
+
+  </div>
+      </div>
+
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+
+  <thead>
+    <tr class="table-info">
+      <th scope="col" >TICKET</th>
+      <th scope="col">Zone</th>
+      <th scope="col">จังหวัด</th>
+      <th scope="col">ชื่อสถาบัน</th>
+      <th scope="col">งวดงาน</th>
+        <th scope="col"><form action="{{ url_for ('showdata.Showsearch')}}" method="POST">
+  <div class="input-group-prepend">
+      <input type="hidden" name="snonulls" value="" >
+      <button type="submit" class="badge badge-pill badge-success">แสดงเฉพาะเหตุเสีย</button>
+      </div>
+            </form></th>
+            <th scope="col">Router</th>
+      <th scope="col">เวลา</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+{% for rows in datas %}
+    {% set cols = rows[0].split('//') %}
+
+    <tr>
+      <th scope="row" style="width:210px;">{{ cols[0] }}</th>
+      <td>{{ cols[1] }}</td>
+      <td>{{ cols[2] }}</td>
+      <td>{{ cols[3] }}</td>
+      <td style="width:150px;">{{ cols[4] }}</td>
+        <td class="text-danger text-wrap">{{ rows.2 }}</td>
+        <td class="text-danger text-wrap">{{ rows.3 }}</td>
+      <td style="width:170px;">
+{{ rows.1 }}
+
+      </td>
+      
+    </tr>
+
+
+{% endfor %}
+
+
+  </tbody>
+</table>
+
+</div>
+
+{{ pagination.links }}
+
+
+</div>
+
+{% include "footer.html" %}

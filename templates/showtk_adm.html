@@ -1,0 +1,116 @@
+{% include "header.html" %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+
+        <form action="{{ url_for ('showdata.Showadmsearch')}}" method="POST">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">ค้นหา</span>
+    <input type="text" class="form-control" placeholder="ใส่ชื่อวิทยาลัย หรือ TK หรือ จังหวัด" name="ssearch">
+      <button type="submit" class="btn btn-primary">ค้นหา</button>
+  </div>
+
+</form>
+
+    </div>
+    <div class="col">
+
+      <form action="{{ url_for ('showdata.Showadmsearch')}}" method="POST">
+  <div class="form-row align-items-center">
+      <div class="col-auto">
+    <input type="date" class="form-control" name="dtstart" autocomplete="off" required>
+          </div>
+      <div class="col-auto">
+      <input type="date" class="form-control" name="dtend" autocomplete="off" required>
+</div>
+<div class="col-auto">
+  <button type="submit" class="btn btn-primary">แสดงข้อมูล</button>
+       </div>
+      <div class="col-auto">
+    <a href="/showtkadmin" type="button" class="btn btn-outline-primary">แสดงทั้งหมด</a>
+    </div>
+    </div>
+</form>
+    </div>
+
+<div class="col-auto">
+<p class="text-info">เข้าสู่ระบบในชื่อ {{session['user_sess']}} <a href="../" type="button" class="btn btn-info">กลับหน้าหลัก</a> <a href="/logout" class="badge badge-danger">ออกจากระบบ</a></p>
+
+    </div>
+<br><br>
+
+<table class="table table-striped">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">TK</th>
+      <th scope="col">Zone</th>
+      <th scope="col">จังหวัด</th>
+      <th scope="col">ชื่อสถาบัน</th>
+      <th scope="col">งวดงาน</th>
+      <th scope="col">หมายเหตุ</th>
+      <th scope="col">Router</th>
+      <th scope="col">เวลา</th>
+      <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for rows in datas %}
+{% set cols = rows[0].split('//') %}
+    <tr>
+      <th scope="row">{{ cols[0] }}</th>
+      <td>{{ cols[1] }}</td>
+      <td>{{ cols[2] }}</td>
+      <td>{{ cols[3] }}</td>
+      <td>{{ cols[4] }}</td>
+      <td class="text-danger text-wrap">{{ rows.2 }}</td>
+      <td class="text-danger text-wrap">{{ rows.3 }}</td>
+      <td>{{ rows.1 }}</td>
+      <td class="text-nowrap"><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal{{rows.4}}">แก้ไข</button> <a href="#" role="button" class="btn btn-secondary disabled" aria-disabled="true">ลบ</a></td>
+      
+    
+    </tr>
+
+  <div class="modal fade" id="exampleModal{{rows.4}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">กำลังแก้ไขข้อมูล ของ ID: {{ rows.4 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ url_for('showdata.Editdata') }}" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="hidden" class="form-control" value="{{rows.4}}" name="id_pres">
+          </div>
+           <div class="form-group">
+            <label class="col-form-label">หมายเหตุ:</label>
+            <input type="text" class="form-control" value="{{rows.2}}" name="notes">
+
+            <label class="col-form-label">Router:</label>
+            <input type="text" class="form-control" value="{{rows.3}}" name="notes2">
+
+          </div>
+          
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">อัพเดทข้อมูล</button>
+      </div>
+
+         </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+{% endfor %}
+  </tbody>
+</table>
+
+</div>
+
+{% include "footer.html" %}

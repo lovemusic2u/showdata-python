@@ -1,0 +1,121 @@
+{% include "header.html" %}
+
+
+<div class="container">
+      <div class="jumbotron">
+        <h2 class="display-4">{{headername}} <a href="/" class="btn btn-primary" role="button" data-bs-toggle="button">กลับหน้าหลัก</a></h2>
+
+        <hr class="my-4">
+        <p class="lead">17 กุมภาพันธ์ 2567:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.10</li>
+          <li class="list-group-item">เรามีความหนักใจอย่างมากที่จะ อัพเดทเวอร์ชั่น นี้ เนื่องด้วยการแก้ไข Code หลังจากนี้ทำได้ลำบาก แต่เราก็ทำมันมาจนได้ ซึ่งอาจจะมีข้อผิดพลาดบางอย่าง หากพบเจอโปรดแจ้งเรา</li>
+            <li class="list-group-item">เพิ่มการแสดงผล ในส่วนของ Router<br/>
+              (คำอธิบายส่วนนี้)<br/>
+              - จะแสดงผลของ ว่า วิทยาลัยหรือ โรงเรียนนั้นๆ ใช้งาน Router หรือ ไม่ได้ใช้งาน<br/>
+              - จะไม่เพิ่มข้อมูล ย้อนหลัง แต่จะเพิ่มข้อมูล หลังจาก Version 0.10 เป็นต้นไป<br/>
+              - ตัวหนังสือของข้อความ จะเป็นสีแดง<br/>
+              - ยังไม่สามารถค้นหาตามวันที่ ในส่วนนี้ได้<br/>
+              - ยังไม่สามารถค้นหาตามงวดงาน ในส่วนนี้ได้
+
+            </li>
+            <li class="list-group-item">ปรับปรุงในส่วนของหน้า Admin<br/>
+              (คำอธิบายส่วนนี้)<br/>
+              - เพิ่มช่อง ใส่ข้อมูล Router ไม่ได้ใช้งาน<br/>
+              - เพิ่มปุ่ม กลับหน้าหลัก<br/>
+              - ปรับปรุงหน้า admin
+
+            </li>
+             
+        </ul>
+        <hr class="my-4">
+        <p class="lead">5 กุมภาพันธ์ 2567:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.9</li>
+            <li class="list-group-item">เพิ่มการค้นหา งวดงานที่ 1 จากเดิม ไม่มี</li>
+            <li class="list-group-item">นำข้อความแสดง "นับตั้งแต่วันที่ 31 มีนาคม 2566 " ออก เนื่องจาก ต่อไปนี้จะเริ่มนับ TK ทั้งหมดในปีปัจจุบัน</li>
+             
+        </ul>
+
+          <hr class="my-4">
+        <p class="lead">18 สิงหาคม 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.8</li>
+          <li class="list-group-item">เพิ่มการแสดงผล TK ที่มีปัญหา โดยจะโชว์ TK ที่มีปัญหาเท่านั้น <br/>
+              - ยังไม่สามารถค้นหาตามวันที่ได้<br/>
+              - ยังไม่สามารถค้นหาตามงวดงานได้<br/>
+              - จะแสดงผลทั้งหมดที่มีปัญหา
+          </li>
+            <li class="list-group-item">เพิ่มการแสดงผล นับจำนวน TK ที่มีเหตุเสียทั้งหมด เมื่อกดปุ่ม แสดงผล TK ที่มีปัญหา</li>
+            <li class="list-group-item">เพิ่มการแสดงผล ขนาดหน้าจอBrowser (ด้านล่างสุดของเว็บ) โดยจะบอก ขนาดหน้าจอBrowser ปัจจุบัน และ ขนาดที่แนะนำ</li>
+             <li class="list-group-item">แก้ไข Code บางส่วน ให้แสดงผลรวดเร็วขึ้น</li>
+        </ul>
+
+          <hr class="my-4">
+        <p class="lead">26 กรกฎาคม 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.7</li>
+          <li class="list-group-item">แก้ไขข้อผิดพลาดเล็กน้อย ที่เกิดจากการค้นหาข้อมูลตามวันที่ และ จำนวนผลรวม TICKET แสดงผลไม่ตรงกับความเป็นจริง</li>
+        </ul>
+
+        <hr class="my-4">
+        <p class="lead">26 กรกฎาคม 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.6</li>
+          <li class="list-group-item "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg> แก้ไขข้อผิดพลาดร้ายแรง เมื่อค้นหา TK , จังหวัด หรือ ชื่อวิทยาลัย แล้วระบบแสดงผลเวลาไม่ตรงกับความเป็นจริง </li>
+          <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg> แก้ไขข้อผิดพลาดร้ายแรง เมื่อค้นหา TK ตามวันที่ แล้วระบบแสดงผลเวลาไม่ตรงกับความเป็นจริง</li>
+          <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+</svg> ปัญหา เมื่อค้นหา ตามวันที่ แล้วระบบแสดงผลไม่ตรงกับวันที่จริง เช่น <div class="text-danger"> เมื่อค้นหาวันที่ 1 ถึง วันที่ 7 แล้วระบบไม่แสดงผลวันที่ 7 นั้น </div>ข้อผิดพลาดนี้ ได้รับการแก้ไขแล้ว</li>
+          <li class="list-group-item">แก้ไข ข้อผิดพลาดเล็กน้อยอื่นๆ</li>
+        </ul>
+
+        <hr class="my-4">
+        <p class="lead">08 มิถุนายน 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.5</li>
+          <li class="list-group-item">แก้ไขข้อผิดพลาด เมื่อค้นหา TK , จังหวัด หรือ ชื่อวิทยาลัย แล้วระบบไม่แสดงผล (จำนวน TICKET ที่มี) เรียงลำดับจาก TK ใหม่ไปเก่า</li>
+          <li class="list-group-item">แก้ไขข้อผิดพลาด เมื่อค้นหา ตามงวดงาน แล้วระบบไม่แสดงผล (จำนวน TICKET ที่มี) เรียงลำดับจาก TK ใหม่ไปเก่า</li>
+          <li class="list-group-item">แก้ไขข้อผิดพลาด เมื่อค้นหา ตามวันที่ แล้วระบบไม่แสดงผล (จำนวน TICKET ที่มี) เรียงลำดับจาก TK ใหม่ไปเก่า</li>
+          <li class="list-group-item">เพิ่มการแสดงผล TK ที่ค้นหา ต่อหน้า จากเดิม 15 TK เป็น 150 TK</li>
+          <li class="list-group-item">เพิ่มช่องหมายเหตุ : ในส่วนนี้จะแสดงปัญหาที่พบจากการ vdo conference เช่น UPSเสีย , UPS ไม่สำรองไฟ เป็นต้น</li>
+          <li class="list-group-item">แก้ไข ข้อผิดพลาดเล็กน้อยอื่นๆ</li>
+        </ul>
+
+          <hr class="my-4">
+        <p class="lead">17 เมษายน 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.4</li>
+          <li class="list-group-item">ปรับเปลี่ยนการแสดงเวลาให้ตรงกับใน Application ในกลุ่ม Line PM</li>
+          <li class="list-group-item">เพิ่มการแสดงผล จำนวน TICKET (อยู่ด้านบนตารางแสดงข้อมูล)</li>
+          <li class="list-group-item">แก้ไขการแสดงผลบน Smartphone ได้อย่างถูกต้อง</li>
+          <li class="list-group-item">แก้ไข ข้อผิดพลาดเล็กน้อยอื่นๆ</li>
+        </ul>
+        <hr class="my-4">
+        <p class="lead">7 เมษายน 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.3</li>
+          <li class="list-group-item">เพิ่มการค้นหา และแสดงผล เฉพาะงวดงาน</li>
+          <li class="list-group-item">เพิ่มแบ่งหน้า เป็นหน้าละ 10 TK</li>
+          <li class="list-group-item">แก้ไขแสดง ผลตารางให้ดูสวยงาม</li>
+            <li class="list-group-item">ปรับเปลี่ยนหน้า Patch Notes ให้ดูสวยงาม</li>
+          <li class="list-group-item">แก้ไข ข้อผิดพลาดอื่นๆ</li>
+        </ul>
+        <hr class="my-4">
+        <p class="lead">5 เมษายน 2566:</p>
+        <ul class="list-group">
+          <li class="list-group-item active">Version 0.2</li>
+          <li class="list-group-item">แก้ไขแสดง TK ให้เรียงจากใหม่ล่าสุดขึ้นก่อน</li>
+          <li class="list-group-item">ปรับปรุงในส่วนของดึงข้อมูลให้ดีขึ้น</li>
+          <li class="list-group-item">แก้ไข ข้อผิดพลาดอื่นๆ</li>
+        </ul>
+      </div>
+    </div>
+
+
+
+<br><br>
